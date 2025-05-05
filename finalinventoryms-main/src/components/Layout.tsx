@@ -1,6 +1,5 @@
-
 import { ReactNode, useState } from "react";
-import { Sidebar } from "./Sidebar";
+import Sidebar from "./Sidebar";
 import { SearchBar } from "./SearchBar";
 import { Bell, User, X } from "lucide-react";
 import { 
