@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inventory Management System</title>
     <meta name="description" content="A web-based inventory management system for businesses." />
     <meta name="author" content="Lovable" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Open Graph (for WhatsApp, LinkedIn, etc.) -->
     <meta property="og:title" content="Inventory Management System" />
@@ -25,6 +24,37 @@
 
     <!-- Optional: Favicon -->
     <link rel="icon" href="/favicon.ico" />
+
+    <!-- Responsive CSS for mobile friendliness -->
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, Arial, sans-serif;
+        background: #f9f9f9;
+        color: #222;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: 600px) {
+        html {
+          font-size: 14px;
+        }
+        body {
+          padding: 0 4px;
+        }
+      }
+    </style>
   </head>
 
   <body>
