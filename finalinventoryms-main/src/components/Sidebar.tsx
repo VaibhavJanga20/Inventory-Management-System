@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -12,8 +12,6 @@ import {
   Settings,
   User,
   FileText,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 const navItems = [
@@ -32,25 +30,11 @@ const navItems = [
 
 export function Sidebar() {
   const location = useLocation();
-  const [collapsed, setCollapsed] = useState(false);
-
+  
   return (
-    <div
-      className={`h-screen bg-white border-r border-gray-200 flex flex-col transition-all duration-200 ${
-        collapsed ? "w-16" : "w-64"
-      }`}
-    >
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
-        <h1 className={`text-xl font-semibold text-purple-500 transition-all duration-200 ${collapsed ? "text-base" : ""}`}>
-          {collapsed ? "IV" : "InventoryVista"}
-        </h1>
-        <button
-          className="ml-2 p-1 rounded hover:bg-gray-100 transition-colors"
-          onClick={() => setCollapsed((c) => !c)}
-          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-        </button>
+    <div className="h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
+      <div className="p-4 border-b border-gray-200">
+        <h1 className="text-xl font-semibold text-purple-500">InventoryVista</h1>
       </div>
       <nav className="flex-1 overflow-y-auto">
         <ul className="p-2 space-y-1">
@@ -60,19 +44,19 @@ export function Sidebar() {
               <li key={item.path}>
                 <Link
                   to={item.path}
-                  className={`flex items-center px-4 py-2.5 rounded-md text-sm group transition-all duration-200 ${
+                  className={`flex items-center px-4 py-2.5 rounded-md text-sm group ${
                     isActive
                       ? "bg-purple-100 text-purple-600"
                       : "text-gray-700 hover:bg-gray-100"
-                  } ${collapsed ? "justify-center px-2" : ""}`}
+                  }`}
                 >
-                  <span className="mr-3 flex-shrink-0">
+                  <span className="mr-3">
                     <item.icon
                       size={18}
                       className={isActive ? "text-purple-600" : "text-gray-500"}
                     />
                   </span>
-                  {!collapsed && <span>{item.name}</span>}
+                  {item.name}
                 </Link>
               </li>
             );
