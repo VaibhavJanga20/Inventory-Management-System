@@ -2,6 +2,8 @@
 
 A modern web application for efficient inventory management built with React, TypeScript, and Supabase. Features include real-time inventory tracking, order management, customer/supplier management, and comprehensive reporting.
 
+URL:https://inventoryvista.vercel.app/
+
 ## 🚀 Features
 
 - **Real-time Inventory Tracking**: Monitor stock levels and receive low-stock alerts
